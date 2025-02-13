@@ -1,11 +1,11 @@
 document.getElementById('productForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const name = document.getElementById('name').value;
+    const product_name = document.getElementById('product_name').value;
     const amount = document.getElementById('amount').value;
 
     const data = {
-        name: name,
+        name: product_name,
         amount: parseInt(amount)
     };
 

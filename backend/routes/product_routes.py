@@ -13,9 +13,9 @@ def data_save():
         if not data:
             return jsonify({"erro": "Erro ao processar json"}), 400
         
-        name = data.get('name')
+        product_name = data.get('product_name')
         amount = data.get('amount')
-        if not name or not isinstance(amount, int):
+        if not product_name or not isinstance(amount, int):
             return jsonify({"erro": "Dados, inválidos, por favor informe o nome do produto e a quantidade!"}), 400
         
         connection = get_db_connection()
@@ -23,8 +23,8 @@ def data_save():
             return jsonify({"erro": "Falha na conexão com o banco de dados"}), 500
         
         curso = connection.cursor()
-        query = "INSERT INTO product (name, amount) VALUES (%s, %s)"
-        curso.execute(query, (name, amount))
+        query = "INSERT INTO product (product_name, amount) VALUES (%s, %s)"
+        curso.execute(query, (product_name, amount))
         connection.commit()
 
         return jsonify({"mensagem": "Dados salvos com sucesso!"}), 201
