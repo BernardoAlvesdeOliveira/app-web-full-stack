@@ -5,7 +5,7 @@ document.getElementById('productForm').addEventListener('submit', function(e) {
     const amount = document.getElementById('amount').value;
 
     const data = {
-        name: product_name,
+        product_name: product_name,
         amount: parseInt(amount)
     };
 
