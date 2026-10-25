@@ -1,84 +1,83 @@
-## Licença
+## License
 
-Este projeto está licenciado sob a [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
 
-# Aplicação web full stack com Flask e MariaDB
+# Full stack web application with Flask and MariaDB
 
-Este projeto é uma aplicação web full stack que utiliza Flask no backend com um banco de dados MariaDB e um frontend estático em HTML, CSS e JavaScript. O backend expõe uma API RESTful que é consumida pelo frontend para interagir com os dados do banco de dados.
+This project is a full stack web application that uses Flask on the backend with a MariaDB database and a static frontend built with HTML, CSS, and JavaScript. The backend exposes a RESTful API that is consumed by the frontend to interact with the database data.
 
-## Descrição
+## Description
 
-A aplicação foi criada para demonstrar a construção de um servidor backend com Flask, conexão a um banco de dados MariaDB e integração com um frontend estático. A comunicação entre o frontend e o backend é feita por meio de uma API, que pode ser acessada pelo navegador ou outras aplicações cliente.
+The application was created to demonstrate how to build a backend server with Flask, connect to a MariaDB database, and integrate it with a static frontend. Communication between the frontend and backend happens through an API, which can be accessed from a browser or other client applications.
 
-## Tecnologias Utilizadas
+## Technologies Used
 
 - **Backend**: Flask (Python)
-- **Banco de Dados**: MariaDB
+- **Database**: MariaDB
 - **Frontend**: HTML, CSS, JavaScript
-- **Servidor Local**: Para rodar o frontend localmente e consumir a API
+- **Local Server**: To run the frontend locally and consume the API
 
+## How to Run the Project Locally
 
-## Como Rodar o Projeto Localmente
-
-### 1. Clonar o Repositório
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/BernardoAlvesdeOliveira/app-web-full-stack.git
 cd app-web-full-stack
 ```
 
-### 2. Instalar as Dependências do Backend
+### 2. Install Backend Dependencies
 
-Primeiro, instale as dependências do Python:
+First, install the Python dependencies:
 
 ```bash
 pip install -r backend/requirements.txt
 ```
 
-### 3. Configurar o Banco de Dados MariaDB
+### 3. Configure the MariaDB Database
 
-1. Certifique-se de ter o MariaDB instalado e em execução.
-2. Crie um banco de dados e uma tabale com as seguintes colunas para a aplicação.
-3. Importe o script de inicialização do banco de dados:
+1. Make sure MariaDB is installed and running.
+2. Create a database and a table with the required columns for the application.
+3. Import the database initialization script:
 
 ```bash
 mysql -u root -p < database/init.sql
 ```
 
-### 4. Rodar o Servidor Backend (API Flask)
+### 4. Run the Backend Server (Flask API)
 
-Para rodar o servidor Flask localmente, execute o seguinte comando na pasta `backend/`:
+To run the Flask server locally, execute the following command in the project root:
 
 ```bash
 python backend/app.py
 ```
 
-O servidor será iniciado na porta `5001` por padrão.
+The server will start on port `5001` by default.
 
-### 5. Rodar o Frontend Localmente
+### 5. Run the Frontend Locally
 
-Para rodar o frontend localmente, você pode usar um servidor estático simples. Um exemplo usando o `http-server` (Node.js) seria:
+To run the frontend locally, you can use a simple static server. An example using `http-server` (Node.js):
 
-1. Instale o `http-server` globalmente:
+1. Install `http-server` globally:
 
 ```bash
 npm install -g http-server
 ```
 
-2. Navegue até a pasta `frontend/` e inicie o servidor:
+2. Navigate to the `frontend/` folder and start the server:
 
 ```bash
 cd frontend
 http-server
 ```
 
-O servidor será iniciado na porta `8000` por padrão.
+The server will start on port `8000` by default.
 
-### 6. Testar a Aplicação
+### 6. Test the Application
 
-Agora, você pode acessar o frontend em `http://localhost:8000` e testar a integração com o backend rodando em `http://localhost:5001`.
+Now you can access the frontend at `http://localhost:8000` and test its integration with the backend running at `http://localhost:5001`.
 
-## Funcionalidades
+## Features
 
-- **API RESTful**: O backend fornece endpoints para interagir com o banco de dados.
-- **Frontend**: O frontend consome a API para exibir e manipular os dados.
+- **RESTful API**: The backend provides endpoints to interact with the database.
+- **Frontend**: The frontend consumes the API to display and manipulate data.
