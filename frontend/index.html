@@ -1,24 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cadastro de Produto</title>
+        <title>Product Registration</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div class="form-container">
-            <h1>Cadastro de Produto</h1>
+        <main class="page-shell">
+            <header class="page-header">
+                <div>
+                    <p class="eyebrow">Inventory management</p>
+                    <h1>Product Registration</h1>
+                </div>
+                <a class="button button-secondary" href="products.html">View products</a>
+            </header>
+            <section class="card form-container">
+                <p class="intro">Add a product to your inventory in a few seconds.</p>
             <form id="productForm">
-                <label for="product_name">Nome do Produto:</label>
-                <input type="text" id="product_name" name="product_name" placeholder="Digite o nome do Produto" required>
+                <label for="product_name">Product Name:</label>
+                <input type="text" id="product_name" name="product_name" placeholder="Enter the product name" required>
 
-                <label for="amount">Quantidade:</label>
-                <input type="text" id="amount" name="amount" min="1" placeholder="Digite a quantidade de produtos" required>
-                <button type="submit">Salvar</button>
+                <label for="amount">Quantity:</label>
+                <input type="text" id="amount" name="amount" min="1" placeholder="Enter the product quantity" required>
+                <button class="button button-primary" type="submit">Save product</button>
             </form>
-            <div id="responseMenssage" class="hidden"></div>
-        </div>
+            <div id="responseMessage" class="hidden" role="status"></div>
+            </section>
+        </main>
         <script src="script.js"></script>
     </body>
 </html>

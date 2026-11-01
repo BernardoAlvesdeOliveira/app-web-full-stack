@@ -6,10 +6,8 @@ document.getElementById('productForm').addEventListener('submit', function(e) {
 
     const data = {
         product_name: product_name,
-        amount: parseInt(amount)
+        amount: parseInt(amount, 10)
     };
-
-    console.log('Dados enviados:', data)
 
     fetch('http://localhost:5001/api/save', {
         method: 'POST',
@@ -20,10 +18,11 @@ document.getElementById('productForm').addEventListener('submit', function(e) {
     })
     .then(response => response.json())
     .then(data => {
+        const message = document.getElementById('responseMessage');
+        message.textContent = data.mensagem || data.erro || data.error;
+        message.className = data.mensagem ? 'message success' : 'message error';
         if (data.mensagem) {
-            alert(data.mensagem);
-        } else {
-            alert(data.error);
+            document.getElementById('productForm').reset();
         }
     })
     .catch(error => {

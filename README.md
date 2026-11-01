@@ -2,18 +2,18 @@
 
 This project is licensed under the [MIT License](LICENSE).
 
-# Full stack web application with Flask and MariaDB
+# Full stack web application with Flask and SQLite
 
-This project is a full stack web application that uses Flask on the backend with a MariaDB database and a static frontend built with HTML, CSS, and JavaScript. The backend exposes a RESTful API that is consumed by the frontend to interact with the database data.
+This project is a full stack web application that uses Flask on the backend with a SQLite database and a static frontend built with HTML, CSS, and JavaScript. The backend exposes a RESTful API that is consumed by the frontend to interact with the database data.
 
 ## Description
 
-The application was created to demonstrate how to build a backend server with Flask, connect to a MariaDB database, and integrate it with a static frontend. Communication between the frontend and backend happens through an API, which can be accessed from a browser or other client applications.
+The application was created to demonstrate how to build a backend server with Flask, connect to a SQLite database, and integrate it with a static frontend. Communication between the frontend and backend happens through an API, which can be accessed from a browser or other client applications.
 
 ## Technologies Used
 
 - **Backend**: Flask (Python)
-- **Database**: MariaDB
+- **Database**: SQLite
 - **Frontend**: HTML, CSS, JavaScript
 - **Local Server**: To run the frontend locally and consume the API
 
@@ -34,44 +34,23 @@ First, install the Python dependencies:
 pip install -r backend/requirements.txt
 ```
 
-### 3. Configure the MariaDB Database
+### 3. Configure the SQLite Database
 
-1. Make sure MariaDB is installed and running.
-2. Create a database and a table with the required columns for the application.
-3. Import the database initialization script:
-
-```bash
-mysql -u root -p < database/init.sql
-```
+No separate database server is required. The application creates the `database/stock.db` file and the required table automatically when the backend starts receiving requests.
 
 ### 4. Run the Backend Server (Flask API)
 
-To run the Flask server locally, execute the following command in the project root:
+To start the backend and frontend together, execute this command in the project root:
 
-```bash
-python backend/app.py
+```powershell
+.\start.ps1
 ```
 
-The server will start on port `5001` by default.
+The script installs the backend dependencies, starts the API on port `5001`, starts the frontend on port `8000`, and opens the frontend in the browser. The SQLite database file is created automatically in `database/stock.db`.
 
 ### 5. Run the Frontend Locally
 
-To run the frontend locally, you can use a simple static server. An example using `http-server` (Node.js):
-
-1. Install `http-server` globally:
-
-```bash
-npm install -g http-server
-```
-
-2. Navigate to the `frontend/` folder and start the server:
-
-```bash
-cd frontend
-http-server
-```
-
-The server will start on port `8000` by default.
+The frontend is started automatically by `start.ps1` on port `8000`.
 
 ### 6. Test the Application
 

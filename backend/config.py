@@ -1,11 +1,5 @@
-from dotenv import load_dotenv
 import os
+from pathlib import Path
 
-load_dotenv()
-
-DB_CONFIG = {
-    "host": os.getenv("DB_HOST"),
-    "user": os.getenv("DB_USER"),
-    "password": os.getenv("DB_PASSWORD"),
-    "database": os.getenv("DB_NAME"),
-}
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DB_PATH = Path(os.getenv("DB_PATH", PROJECT_ROOT / "database" / "stock.db"))
