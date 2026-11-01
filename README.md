@@ -6,6 +6,12 @@ This project is licensed under the [MIT License](LICENSE).
 
 This project is a full stack web application that uses Flask on the backend with a SQLite database and a static frontend built with HTML, CSS, and JavaScript. The backend exposes a RESTful API that is consumed by the frontend to interact with the database data.
 
+## Previews
+
+<img src="./media/registration.PNG" alt="Registration screen">
+
+<img src="./media/registered.PNG" alt="Registered products screen">
+
 ## Description
 
 The application was created to demonstrate how to build a backend server with Flask, connect to a SQLite database, and integrate it with a static frontend. Communication between the frontend and backend happens through an API, which can be accessed from a browser or other client applications.
